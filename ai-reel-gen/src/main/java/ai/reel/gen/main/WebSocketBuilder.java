@@ -8,16 +8,10 @@ import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import commons.marcandreher.Commons.Flogger;
 import commons.marcandreher.Commons.Flogger.Prefix;
 import spark.Session;
-import spark.Spark;
 
 @WebSocket
 public class WebSocketBuilder {
     Flogger logger = Flogger.instance;
-
-    public WebSocketBuilder() {
-        Spark.webSocket("/ws", this);
-       
-    }
 
     @OnWebSocketConnect
     public void onConnect(Session user) throws Exception {

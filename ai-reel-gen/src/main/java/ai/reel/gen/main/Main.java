@@ -21,8 +21,7 @@ public class Main {
         webServer.setThreadPool(3, 6, 3000);
 
        
-        new WebSocketBuilder();
-
+        Spark.webSocket("/ws", new WebSocketBuilder());
         
         try {
             webServer.ignite(ENV.get("IP"), Integer.parseInt(ENV.get("PORT")));
